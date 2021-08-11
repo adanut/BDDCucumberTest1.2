@@ -1,0 +1,343 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-08-11T12:17:55.555Z",
+        "line": 6,
+        "name": "As a user i want to add a customer vers 2",
+        "description": "",
+        "id": "customer-s-page;as-a-user-i-want-to-add-a-customer-vers-2",
+        "after": [
+          {
+            "result": {
+              "duration": 3649000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "org.example.StepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 7020000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "i am on main page",
+            "match": {
+              "location": "org.example.StepDefinitions.main_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 197000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "when i click on Add customer",
+            "match": {
+              "location": "org.example.StepDefinitions.clickIndustriesButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1961000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "i complete customer\u0027s",
+            "match": {
+              "location": "org.example.StepDefinitions.i_complete_customer_s(java.util.Map\u003cjava.lang.String, java.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "first name",
+                  "Grigorescu"
+                ]
+              },
+              {
+                "cells": [
+                  "last name",
+                  "Andrei"
+                ]
+              },
+              {
+                "cells": [
+                  "street name",
+                  "Eminescu"
+                ]
+              },
+              {
+                "cells": [
+                  "street number",
+                  "455"
+                ]
+              },
+              {
+                "cells": [
+                  "city",
+                  "Timisoara"
+                ]
+              },
+              {
+                "cells": [
+                  "state",
+                  "Romania"
+                ]
+              },
+              {
+                "cells": [
+                  "phone number",
+                  "0345678987"
+                ]
+              },
+              {
+                "cells": [
+                  "social security number",
+                  "46657676532234"
+                ]
+              },
+              {
+                "cells": [
+                  "licence plate",
+                  "TM01GRI"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1240000000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "i click Submit button, the customer data will be saved",
+            "match": {
+              "location": "org.example.StepDefinitions.clickSubmitButton()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-11T12:18:09.760Z",
+        "line": 23,
+        "name": "As a user i want to edit all fields of an existing customer",
+        "description": "",
+        "id": "customer-s-page;as-a-user-i-want-to-edit-all-fields-of-an-existing-customer",
+        "after": [
+          {
+            "result": {
+              "duration": 1863000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "org.example.StepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4448000000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "i am on main page",
+            "match": {
+              "location": "org.example.StepDefinitions.main_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 353000000,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "i search for a specific client",
+            "match": {
+              "location": "org.example.StepDefinitions.searchForaClient()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 78000000,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "i click Edit",
+            "match": {
+              "location": "org.example.StepDefinitions.clickEditButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2844000000,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "i will edit customer\u0027s fields",
+            "match": {
+              "location": "org.example.StepDefinitions.i_edit_customer_s(java.util.Map\u003cjava.lang.String, java.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "first name",
+                  "Teodor"
+                ]
+              },
+              {
+                "cells": [
+                  "last name",
+                  "Andreea"
+                ]
+              },
+              {
+                "cells": [
+                  "street name",
+                  "Creanga"
+                ]
+              },
+              {
+                "cells": [
+                  "street number",
+                  "5"
+                ]
+              },
+              {
+                "cells": [
+                  "city",
+                  "Arad"
+                ]
+              },
+              {
+                "cells": [
+                  "state",
+                  "Romania"
+                ]
+              },
+              {
+                "cells": [
+                  "phone number",
+                  "0745678987"
+                ]
+              },
+              {
+                "cells": [
+                  "social security number",
+                  "56657676532234"
+                ]
+              },
+              {
+                "cells": [
+                  "licence plate",
+                  "TM01TEO"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 102000000,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "i click Save Changes button,the new customer data will be saved",
+            "match": {
+              "location": "org.example.StepDefinitions.clickSubmitButtonFromEdit()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-11T12:18:19.465Z",
+        "line": 41,
+        "name": "As a user i want to delete a customer",
+        "description": "",
+        "id": "customer-s-page;as-a-user-i-want-to-delete-a-customer",
+        "after": [
+          {
+            "result": {
+              "duration": 1961000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "org.example.StepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4977000000,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "i am on main page",
+            "match": {
+              "location": "org.example.StepDefinitions.main_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 375000000,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "i search for a client",
+            "match": {
+              "location": "org.example.StepDefinitions.searchForClient(java.util.Map\u003cjava.lang.String, java.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "first name",
+                  "Teodor"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 76000000,
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "when i click Delete Button,The customer will be deleted",
+            "match": {
+              "location": "org.example.StepDefinitions.clickDeleteButtonFromEdit()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Customer\u0027s page",
+    "description": "  In this tests we will verify the page as a user and\n  i want to add a customer, to edit a customer and to delete a specific customer",
+    "id": "customer-s-page",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/org/example/Test1.feature",
+    "tags": []
+  }
+]
