@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-08-11T12:17:55.555Z",
+        "start_timestamp": "2021-08-20T10:43:24.350Z",
         "line": 6,
         "name": "As a user i want to add a customer vers 2",
         "description": "",
@@ -11,7 +11,7 @@
         "after": [
           {
             "result": {
-              "duration": 3649000000,
+              "duration": 2316000000,
               "status": "passed"
             },
             "match": {
@@ -24,7 +24,7 @@
         "steps": [
           {
             "result": {
-              "duration": 7020000000,
+              "duration": 7178000000,
               "status": "passed"
             },
             "line": 7,
@@ -36,7 +36,7 @@
           },
           {
             "result": {
-              "duration": 197000000,
+              "duration": 274000000,
               "status": "passed"
             },
             "line": 8,
@@ -48,7 +48,7 @@
           },
           {
             "result": {
-              "duration": 1961000000,
+              "duration": 4070000000,
               "status": "passed"
             },
             "line": 9,
@@ -116,7 +116,7 @@
           },
           {
             "result": {
-              "duration": 1240000000,
+              "duration": 1281000000,
               "status": "passed"
             },
             "line": 20,
@@ -129,7 +129,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-08-11T12:18:09.760Z",
+        "start_timestamp": "2021-08-20T10:43:39.623Z",
         "line": 23,
         "name": "As a user i want to edit all fields of an existing customer",
         "description": "",
@@ -137,7 +137,7 @@
         "after": [
           {
             "result": {
-              "duration": 1863000000,
+              "duration": 2060000000,
               "status": "passed"
             },
             "match": {
@@ -150,7 +150,7 @@
         "steps": [
           {
             "result": {
-              "duration": 4448000000,
+              "duration": 4715000000,
               "status": "passed"
             },
             "line": 24,
@@ -162,7 +162,7 @@
           },
           {
             "result": {
-              "duration": 353000000,
+              "duration": 244000000,
               "status": "passed"
             },
             "line": 25,
@@ -186,7 +186,7 @@
           },
           {
             "result": {
-              "duration": 2844000000,
+              "duration": 2759000000,
               "status": "passed"
             },
             "line": 27,
@@ -254,7 +254,7 @@
           },
           {
             "result": {
-              "duration": 102000000,
+              "duration": 70000000,
               "status": "passed"
             },
             "line": 39,
@@ -267,7 +267,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-08-11T12:18:19.465Z",
+        "start_timestamp": "2021-08-20T10:43:49.583Z",
         "line": 41,
         "name": "As a user i want to delete a customer",
         "description": "",
@@ -275,7 +275,7 @@
         "after": [
           {
             "result": {
-              "duration": 1961000000,
+              "duration": 2030000000,
               "status": "passed"
             },
             "match": {
@@ -288,7 +288,7 @@
         "steps": [
           {
             "result": {
-              "duration": 4977000000,
+              "duration": 4332000000,
               "status": "passed"
             },
             "line": 42,
@@ -300,7 +300,7 @@
           },
           {
             "result": {
-              "duration": 375000000,
+              "duration": 256000000,
               "status": "passed"
             },
             "line": 43,
@@ -320,7 +320,7 @@
           },
           {
             "result": {
-              "duration": 76000000,
+              "duration": 1193000000,
               "status": "passed"
             },
             "line": 45,

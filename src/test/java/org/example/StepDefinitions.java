@@ -58,61 +58,72 @@ public class StepDefinitions {
     }
 
     @And("i complete customer's")
-    public void i_complete_customer_s(Map<String, String> client) {
-        WebElement procent = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/div[1]/div/div[2]/p"));
-        Assert.assertEquals( "0%",procent.getText());
+    public void i_complete_customer_s(Map<String, String> client) throws InterruptedException {
+        WebElement procent = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/div/div/div/div[2]/p"));
+
+        Assert.assertEquals("0%", procent.getText());
         WebElement firstName = driver.findElement(By.id("First-Name"));
         firstName.click();
+        Thread.sleep(1000);
         firstName.sendKeys(client.get("first name"));
 
 
         WebElement lastname = driver.findElement(By.id("Last-Name"));
         lastname.click();
 
-        WebElement procentAfterFirstName = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/div[1]/div/div[2]/p"));
-        Assert.assertEquals( "11%",procentAfterFirstName.getText());
+        WebElement procentAfterFirstName = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/div/div/div/div[2]/p"));
+        Assert.assertEquals("11%", procentAfterFirstName.getText());
         lastname.sendKeys(client.get("last name"));
 
         WebElement streetName = driver.findElement(By.id("Street-Name"));
         streetName.click();
-        WebElement procentAfterLastName = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/div[1]/div/div[2]/p"));
-        Assert.assertEquals( "22%",procentAfterLastName.getText());
+
+        WebElement procentAfterLastName = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/div/div/div/div[2]/p"));
+        Assert.assertEquals("22%", procentAfterLastName.getText());
         streetName.sendKeys(client.get("street name"));
 
         WebElement streetNumber = driver.findElement(By.id("Street-No"));
         streetNumber.click();
-        WebElement procentAfterStreetName = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/div[1]/div/div[2]/p"));
-        Assert.assertEquals( "33%",procentAfterStreetName.getText());
+
+        WebElement procentAfterStreetName = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/div/div/div/div[2]/p"));
+        Assert.assertEquals("33%", procentAfterStreetName.getText());
         streetNumber.sendKeys(client.get("street number"));
 
         WebElement cityName = driver.findElement(By.id("city"));
         cityName.click();
-        WebElement procentAfterStreetNumber = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/div[1]/div/div[2]/p"));
-        Assert.assertEquals( "44%",procentAfterStreetNumber.getText());
+
+        WebElement procentAfterStreetNumber = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/div/div/div/div[2]/p"));
+        Assert.assertEquals("44%", procentAfterStreetNumber.getText());
         cityName.sendKeys(client.get("city"));
 
         WebElement state = driver.findElement(By.id("state"));
         state.click();
-        WebElement procentAfterCity = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/div[1]/div/div[2]/p"));
-        Assert.assertEquals( "56%",procentAfterCity.getText());
+
+        WebElement procentAfterCity = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/div/div/div/div[2]/p"));
+        Assert.assertEquals("56%", procentAfterCity.getText());
         state.sendKeys(client.get("state"));
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,300)");
 
         WebElement phoneNumber = driver.findElement(By.id("Phone-Number"));
         phoneNumber.click();
-        WebElement procentAfterState = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/div[1]/div/div[2]/p"));
-        Assert.assertEquals( "67%",procentAfterState.getText());
+
+        WebElement procentAfterState = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/div/div/div/div[2]/p"));
+        Assert.assertEquals("67%", procentAfterState.getText());
         phoneNumber.sendKeys(client.get("phone number"));
 
         WebElement socialSecurityNumber = driver.findElement(By.id("Social Security Number"));
         socialSecurityNumber.click();
-        WebElement procentAfterPhoneNumber = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/div[1]/div/div[2]/p"));
-        Assert.assertEquals( "78%",procentAfterPhoneNumber.getText());
+
+        WebElement procentAfterPhoneNumber = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/div/div/div/div[2]/p"));
+        Assert.assertEquals("78%", procentAfterPhoneNumber.getText());
         socialSecurityNumber.sendKeys(client.get("social security number"));
 
         WebElement carLicencePlate = driver.findElement(By.id("Licence-plate"));
         carLicencePlate.click();
-        WebElement procentAfterSSN = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/div[1]/div/div[2]/p"));
-        Assert.assertEquals( "89%",procentAfterSSN.getText());
+        Thread.sleep(1000);
+        WebElement procentAfterSSN = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/div/div/div/div[2]/p"));
+        Assert.assertEquals("89%", procentAfterSSN.getText());
         carLicencePlate.sendKeys(client.get("licence plate"));
     }
 
@@ -121,8 +132,8 @@ public class StepDefinitions {
     public void clickSubmitButton() throws InterruptedException {
         WebElement nextToButton = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form"));
         nextToButton.click();
-        WebElement procentAfterLicesePlate = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/div[1]/div/div[2]/p"));
-        Assert.assertEquals( "100%",procentAfterLicesePlate.getText());
+        WebElement procentAfterLicesePlate = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/div/div/div/div[2]/p"));
+        Assert.assertEquals("100%", procentAfterLicesePlate.getText());
         Thread.sleep(1000);
 
         WebElement submitButton = driver.findElement(By.cssSelector(".form-input-btn"));
@@ -152,21 +163,29 @@ public class StepDefinitions {
 
         WebElement firstName = driver.findElement(By.id("First-Name"));
         firstName.click();
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,400)");
+
         firstName.clear();
         firstName.sendKeys(client.get("first name"));
 
         WebElement lastname = driver.findElement(By.id("Last-Name"));
+        JavascriptExecutor js2 = (JavascriptExecutor) driver;
+        js2.executeScript("arguments[0].scrollIntoView();", lastname);
         lastname.click();
         lastname.clear();
         lastname.sendKeys(client.get("last name"));
 
+
         WebElement streetName = driver.findElement(By.id("Street-Name"));
+        JavascriptExecutor js1 = (JavascriptExecutor) driver;
+        js1.executeScript("arguments[0].scrollIntoView();", streetName);
         streetName.click();
         streetName.clear();
         streetName.sendKeys(client.get("street name"));
-        Thread.sleep(1000);
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("window.scrollBy(700,500)");
+
+        JavascriptExecutor jse1 = (JavascriptExecutor) driver;
+        jse1.executeScript("window.scrollBy(0,300)");
 
         WebElement streetNumber = driver.findElement(By.id("Street-No"));
         streetNumber.click();
@@ -192,7 +211,7 @@ public class StepDefinitions {
         socialSecurityNumber.click();
         socialSecurityNumber.clear();
         socialSecurityNumber.sendKeys(client.get("social security number"));
-
+        Thread.sleep(1000);
         WebElement carLicencePlate = driver.findElement(By.id("Licence-plate"));
         carLicencePlate.click();
         carLicencePlate.clear();
@@ -212,35 +231,31 @@ public class StepDefinitions {
 
     @Then("i click Save Changes button,the new customer data will be saved")
     public void clickSubmitButtonFromEdit() {
-        WebElement submitButton = driver.findElement(By.cssSelector(".form-input-btn"));
+        WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/div/ul/div/div/div[2]/div[2]/form/fieldset/button"));
         submitButton.click();
     }
 
     @Then("when i click Delete Button,The customer will be deleted")
-    public void clickDeleteButtonFromEdit() {
-        WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/ul/div/div/div/button[1]"));
+    public void clickDeleteButtonFromEdit() throws InterruptedException {
+        Thread.sleep(1000);
+        WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/div/ul/div/div/div/button[1]"));
         submitButton.click();
     }
 
 }
 
 
-
-
-
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
-        //throw new io.cucumber.java.PendingException();
+// Write code here that turns the phrase above into concrete actions
+// For automatic transformation, change DataTable to one of
+// E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
+// Map<K, List<V>>. E,K,V must be a String, Integer, Float,
+// Double, Byte, Short, Long, BigInteger or BigDecimal.
+//
+// For other transformations you can register a DataTableType.
+//throw new io.cucumber.java.PendingException();
 
 //        System.out.println(client.get("name"));
 //        System.out.println(client.get("first name"));
-
-
 
 
 //
