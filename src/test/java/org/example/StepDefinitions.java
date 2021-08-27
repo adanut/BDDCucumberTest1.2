@@ -241,8 +241,283 @@ public class StepDefinitions {
         WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/div/ul/div/div/div/button[1]"));
         submitButton.click();
     }
+    @When("i click on statistics and i verify the number of clients added")
+    public void statisticsAddClient(){
+        WebElement statisticsButton = driver.findElement(By.xpath("//*[@id=\"basic-navbar-nav\"]/div/a[4]"));
+        statisticsButton.click();
 
-}
+    }
+    @Then("i complete DG to firstName field")
+    public void addFirstName(Map<String, String> addFirstName) throws InterruptedException {
+        WebElement firstName1 = driver.findElement(By.id("First-Name"));
+        firstName1.click();
+        firstName1.sendKeys(addFirstName.get("firstName"));
+        WebElement lastname = driver.findElement(By.id("Last-Name"));
+        lastname.click();
+        WebElement messageTooFewLetters = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[1]/p"));
+        Assert.assertEquals(messageTooFewLetters.getText(), "Too few letters");
+    }
+        @Then("i complete DG3 to firstName")
+        public void addFirstName1(Map<String, String> addFirstName) throws InterruptedException {
+            WebElement lastName = driver.findElement(By.id("First-Name"));
+            lastName.click();
+            lastName.sendKeys(addFirstName.get("firstName"));
+            WebElement lastname = driver.findElement(By.id("Last-Name"));
+            lastname.click();
+            WebElement messageTooFewLetters = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[1]/p"));
+            Assert.assertEquals(messageTooFewLetters.getText(), "Please insert a valid name");
+
+
+    }
+    @Then("i complete D to lastName")
+    public void addLastName(Map<String, String> addlastName) throws InterruptedException {
+        WebElement lastName = driver.findElement(By.id("Last-Name"));
+        lastName.click();
+        lastName.sendKeys(addlastName.get("lastName"));
+        WebElement nextToButton = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form"));
+        nextToButton.click();
+        WebElement messageTooFewLetters = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[2]/p"));
+        Assert.assertEquals(messageTooFewLetters.getText(), "Too few letters");
+    }
+    @Then("i complete Laur3 to lastName")
+    public void addLastName1(Map<String, String> addlastName) throws InterruptedException {
+        WebElement lastName = driver.findElement(By.id("Last-Name"));
+        lastName.click();
+        lastName.sendKeys(addlastName.get("lastName"));
+        WebElement nextToButton = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form"));
+        nextToButton.click();
+        WebElement messageTooFewLetters = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[2]/p"));
+        Assert.assertEquals(messageTooFewLetters.getText(), "Please insert only letters");
+
+    }
+    @Then("i complete U to streetName")
+    public void addStreetName(Map<String, String> addStreetName) throws InterruptedException {
+        WebElement streetName = driver.findElement(By.id("Street-Name"));
+        streetName.click();
+        streetName.sendKeys(addStreetName.get("streetName"));
+        WebElement streetNumber = driver.findElement(By.id("Street-No"));
+        streetNumber.click();
+        WebElement messageTooFewLetters = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[3]/p"));
+        Assert.assertEquals(messageTooFewLetters.getText(), "Too few letters");
+    }
+    @Then("i complete Lac3 to streetName")
+    public void addStreetName1(Map<String, String> addStreetName) throws InterruptedException {
+        WebElement streetName = driver.findElement(By.id("Street-Name"));
+        streetName.click();
+        streetName.sendKeys(addStreetName.get("streetName"));
+        WebElement streetNumber = driver.findElement(By.id("Street-No"));
+        streetNumber.click();
+        WebElement messageTooFewLetters = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[3]/p"));
+        Assert.assertEquals(messageTooFewLetters.getText(), "Invalid Street Name");
+
+
+    }
+
+    @Then("i complete 12345678 to street number")
+    public void addStreetNumber(Map<String, String> addStreetNumber) throws InterruptedException {
+        WebElement streetNumber = driver.findElement(By.id("Street-No"));
+        streetNumber.click();
+        streetNumber.sendKeys(addStreetNumber.get("streetNumber"));
+        WebElement cityName = driver.findElement(By.id("city"));
+        cityName.click();
+        WebElement messageInvalidStreetNumber = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[4]/p"));
+        Assert.assertEquals(messageInvalidStreetNumber.getText(), "Invalid street number");
+
+
+    }
+
+    @Then("i complete U to city")
+    public void addCity(Map<String, String> addCity) throws InterruptedException {
+        WebElement cityName = driver.findElement(By.id("city"));
+        cityName.click();
+        cityName.sendKeys(addCity.get("city"));
+        WebElement state = driver.findElement(By.id("state"));
+        state.click();
+        WebElement messageInvalidCityName = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[5]/p"));
+        Assert.assertEquals(messageInvalidCityName.getText(), "Too few letters");
+    }
+    @Then("i complete Cluj1 to city")
+    public void addCity1(Map<String, String> addCity) throws InterruptedException {
+        WebElement cityName = driver.findElement(By.id("city"));
+        cityName.click();
+        cityName.sendKeys(addCity.get("city"));
+        WebElement state = driver.findElement(By.id("state"));
+        state.click();
+        WebElement messageInvalidCityName = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[5]/p"));
+        Assert.assertEquals(messageInvalidCityName.getText(), "Please insert only letters");
+    }
+    @Then("i complete abcdefghijklmnoprstuvxzabc to city")
+    public void addCity2(Map<String, String> addCity) throws InterruptedException {
+        WebElement cityName = driver.findElement(By.id("city"));
+        cityName.click();
+        cityName.sendKeys(addCity.get("city"));
+        WebElement state = driver.findElement(By.id("state"));
+        state.click();
+        WebElement messageInvalidCityName = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[5]/p"));
+        Assert.assertEquals(messageInvalidCityName.getText(), "Too many letters");
+    }
+
+    @Then("i complete R to state")
+    public void addState(Map<String, String> addCity) throws InterruptedException {
+        WebElement state = driver.findElement(By.id("state"));
+        state.click();
+        state.sendKeys(addCity.get("state"));
+        WebElement phoneNumber = driver.findElement(By.id("Phone-Number"));
+        phoneNumber.click();
+        WebElement messageInvalidCityName = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[6]/p"));
+        Assert.assertEquals(messageInvalidCityName.getText(), "Too few letters");
+    }
+    @Then("i complete Romania1 to state")
+    public void addState1(Map<String, String> addCity) throws InterruptedException {
+        WebElement state = driver.findElement(By.id("state"));
+        state.click();
+        state.sendKeys(addCity.get("state"));
+        WebElement phoneNumber = driver.findElement(By.id("Phone-Number"));
+        phoneNumber.click();
+        WebElement messageInvalidCityName = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[6]/p"));
+        Assert.assertEquals(messageInvalidCityName.getText(), "This is not a valid State name");
+    }
+    @Then("i complete Abcdefghijklmnoprstuvxzabc to state")
+    public void addState2(Map<String, String> addCity) throws InterruptedException {
+        WebElement state = driver.findElement(By.id("state"));
+        state.click();
+        state.sendKeys(addCity.get("state"));
+        WebElement phoneNumber = driver.findElement(By.id("Phone-Number"));
+        phoneNumber.click();
+        WebElement messageInvalidCityName = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[6]/p"));
+        Assert.assertEquals(messageInvalidCityName.getText(), "Too many letters");
+    }
+
+    @Then("i complete 076568906 to phone number")
+    public void addPhoneNumber(Map<String, String> addCity) throws InterruptedException {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scroll(0,2000)");
+        Thread.sleep(500);
+        jse.executeScript("window.scroll(0,2000)");
+        WebElement phoneNumber = driver.findElement(By.id("Phone-Number"));
+        phoneNumber.click();
+        phoneNumber.sendKeys(addCity.get("phoneNumber"));
+        WebElement socialSecurityNumber = driver.findElement(By.id("Social Security Number"));
+        socialSecurityNumber.click();
+        WebElement messageInvalidPhoneNumber = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[7]/p"));
+        Assert.assertEquals(messageInvalidPhoneNumber.getText(), "Too few numbers");
+    }
+    @Then("i complete 0764546767a to phone number")
+    public void addPhoneNumber1(Map<String, String> addCity) throws InterruptedException {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scroll(0,2000)");
+        Thread.sleep(500);
+        jse.executeScript("window.scroll(0,2000)");
+        WebElement phoneNumber = driver.findElement(By.id("Phone-Number"));
+        phoneNumber.click();
+        phoneNumber.sendKeys(addCity.get("phoneNumber"));
+        WebElement socialSecurityNumber = driver.findElement(By.id("Social Security Number"));
+        socialSecurityNumber.click();
+        WebElement messageInvalidPhoneNumber = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[7]/p"));
+        Assert.assertEquals(messageInvalidPhoneNumber.getText(), "Please insert only numbers");
+    }
+    @Then("i complete 079876543210123 to phone number")
+    public void addPhoneNumber2(Map<String, String> addPhoneNumber) throws InterruptedException {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scroll(0,2000)");
+        Thread.sleep(500);
+        jse.executeScript("window.scroll(0,2000)");
+        WebElement phoneNumber = driver.findElement(By.id("Phone-Number"));
+        phoneNumber.click();
+        phoneNumber.sendKeys(addPhoneNumber.get("phoneNumber"));
+        WebElement socialSecurityNumber = driver.findElement(By.id("Social Security Number"));
+        socialSecurityNumber.click();
+        WebElement messageInvalidPhoneNumber = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[7]/p"));
+        Assert.assertEquals(messageInvalidPhoneNumber.getText(), "Too many numbers");
+    }
+
+    @Then("i complete 07656890687 to ssn")
+    public void addSsn(Map<String, String> addCity) throws InterruptedException {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scroll(0,2000)");
+        Thread.sleep(500);
+        jse.executeScript("window.scroll(0,2000)");
+        WebElement socialSecurityNumber = driver.findElement(By.id("Social Security Number"));
+        socialSecurityNumber.click();
+        socialSecurityNumber.sendKeys(addCity.get("ssn"));
+        WebElement carLicencePlate = driver.findElement(By.id("Licence-plate"));
+        carLicencePlate.click();
+        WebElement messageInvalidPhoneNumber = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[8]/p"));
+        Assert.assertEquals(messageInvalidPhoneNumber.getText(), "Too few numbers");
+    }
+    @Then("i complete 0764546767a to ssn")
+    public void addSsn1(Map<String, String> addssn) throws InterruptedException {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scroll(0,2000)");
+        Thread.sleep(500);
+        jse.executeScript("window.scroll(0,2000)");
+        WebElement socialSecurityNumber = driver.findElement(By.id("Social Security Number"));
+        socialSecurityNumber.click();
+        socialSecurityNumber.sendKeys(addssn.get("ssn"));
+        WebElement carLicencePlate = driver.findElement(By.id("Licence-plate"));
+        carLicencePlate.click();
+        WebElement messageInvalidPhoneNumber = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[8]/p"));
+        Assert.assertEquals(messageInvalidPhoneNumber.getText(), "Please insert only numbers");
+    }
+    @Then("i complete 079876543210123 to ssn")
+    public void addSsn2(Map<String, String> addssn) throws InterruptedException {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scroll(0,2000)");
+        Thread.sleep(500);
+        jse.executeScript("window.scroll(0,2000)");
+        WebElement socialSecurityNumber = driver.findElement(By.id("Social Security Number"));
+        socialSecurityNumber.click();
+        socialSecurityNumber.sendKeys(addssn.get("ssn"));
+        WebElement carLicencePlate = driver.findElement(By.id("Licence-plate"));
+        carLicencePlate.click();
+        WebElement messageInvalidPhoneNumber = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[8]/p"));
+        Assert.assertEquals(messageInvalidPhoneNumber.getText(), "Too many numbers");
+    }
+
+    @Then("i complete BC5 to license plate")
+    public void addlicensePlate(Map<String, String> addlicensePlate) throws InterruptedException {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scroll(0,2000)");
+        Thread.sleep(500);
+        jse.executeScript("window.scroll(0,2000)");
+        WebElement carLicencePlate = driver.findElement(By.id("Licence-plate"));
+        carLicencePlate.click();
+        carLicencePlate.sendKeys(addlicensePlate.get("licensePlate"));
+        WebElement nextToButton = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form"));
+        nextToButton.click();
+        WebElement messageInvalidPhoneNumber = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[9]/p"));
+        Assert.assertEquals(messageInvalidPhoneNumber.getText(), "Too few letters");
+    }
+    @Then("i complete BSFG to license plate")
+    public void addlicensePlate1(Map<String, String> addlicensePlate) throws InterruptedException {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scroll(0,2000)");
+        Thread.sleep(500);
+        jse.executeScript("window.scroll(0,2000)");
+        WebElement carLicencePlate = driver.findElement(By.id("Licence-plate"));
+        carLicencePlate.click();
+        carLicencePlate.sendKeys(addlicensePlate.get("licensePlate"));
+        WebElement nextToButton = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form"));
+        nextToButton.click();
+        WebElement messageInvalidPhoneNumber = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[9]/p"));
+        Assert.assertEquals(messageInvalidPhoneNumber.getText(), "Invalid License-plate");
+    }
+    @Then("i complete B12345678901234 to license plate")
+    public void addlicensePlate2(Map<String, String> addlicensePlate) throws InterruptedException {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scroll(0,2000)");
+        Thread.sleep(500);
+        jse.executeScript("window.scroll(0,2000)");
+        WebElement carLicencePlate = driver.findElement(By.id("Licence-plate"));
+        carLicencePlate.click();
+        carLicencePlate.sendKeys(addlicensePlate.get("licensePlate"));
+        WebElement nextToButton = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form"));
+        nextToButton.click();
+        WebElement messageInvalidPhoneNumber = getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/form/fieldset/div[9]/p"));
+        Assert.assertEquals(messageInvalidPhoneNumber.getText(), "Too many letters");
+    }
+    }
+
 
 
 // Write code here that turns the phrase above into concrete actions

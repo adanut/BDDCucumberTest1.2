@@ -8,8 +8,10 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = {"src/test/resources/org/example/Test1.feature"}
         , plugin = {"pretty", "json:target/raport.json",
-        "html:target/cucumber-report.html"}/*name ="As a user i want to add a customer vers 2"*/)
+        "html:target/cucumber-report.html"},tags = "@smoke")
 public class RunCucumberTest {
 
 
 }
+//*,name ="Testing AddClient form with invalid data to first name field")*//
+//,tags = "@smoke")
